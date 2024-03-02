@@ -3,6 +3,10 @@ import client from "./db_client";
 const app = express();
 const port = 5000;
 
+const query = `
+
+`;
+
 app.get("/", async (req: Request, res: Response) => {
   const { rows } = await client.query("SELECT * FROM Employees LIMIT 4");
   res.status(200).json({ data: rows });
